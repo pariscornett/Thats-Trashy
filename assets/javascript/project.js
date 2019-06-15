@@ -15,7 +15,7 @@ $("#submit").on("click", function(event){
   console.log(response);
   //set variables to avoid repeated dot notation
   let city = response.city.name;
-  let temperature = response.list[0].main.temp;
+  let temperature = parseInt(response.list[0].main.temp);
   let humidity = response.list[0].main.humidity;
   let seaLevel = response.list[0].main.sea_level;
   let lat = response.city.coord.lat;
@@ -28,7 +28,7 @@ $("#submit").on("click", function(event){
   console.log("longitude: " + long);
   //display info retrieved to DOM, except the lat and long info, which will be used below with the open layers map
   $("#weather-display").append("<div class = city-info>" + city + "'s Current Weather Stats: ");
-  $(".city-info").append("<div class = temperature> Temperature: "+ temperature);
+  $(".city-info").append("<div class = temperature> Temperature: "+ temperature +"&#8457;");
   $(".temperature").append("<div class = humidity> Humidity: " + humidity);
   $(".humidity").append("<div class = seaLevel> Sea Level: " + seaLevel);
   //open layers map 
