@@ -1,4 +1,9 @@
-
+let city;
+let temperature;
+let humidity;
+let seaLevel;
+let lat;
+let long;
 //weather api ajax call 
 $("#submit").on("click", function(event){
   //hide the search bar after the initial search is made
@@ -6,11 +11,12 @@ $("#submit").on("click", function(event){
   event.preventDefault();
   //take the user input and store it in the variable userInput, then pass it into the queryUrl so that users can get custom info from ajax call
   let userInput = $("#city-search").val();
-  let queryUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7eb8a9862ffc258b2705e3176ca3ab15&q=" + userInput + "&units=imperial";
+  let weatherQueryUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7eb8a9862ffc258b2705e3176ca3ab15&q=" + userInput + "&units=imperial";
   //actual call
   $.ajax({
-  url: queryUrl,
+  url: weatherQueryUrl,
   method: "GET"
+  
 }).then(function(response) { //promise
   console.log(response);
   //set variables to avoid repeated dot notation
@@ -43,9 +49,36 @@ $("#submit").on("click", function(event){
       center: ol.proj.fromLonLat([long,lat]), //use long and lat variables we got from the open weather map api to change the map's display
       zoom: 14 //sets default zoom for map 
     })
-  });  
+  }); 
+
+  // Foursquare API
+  let clientID = "3C4SB3NU2CPTLYSZRFHY0W032YTEPL2OKYALGGW2XZSGQJYL";
+  let clientSecret = "C2RQWRLPF5ROBLCFVEBZKFPBMARI2RBRMWBMXH4K1SQBBZPF";
+  let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&ll=" + lat +"," + long +"&query=recycling";
+
+  //don't mess with this just in case
+  // let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&limit=10&ll=" + lat +"," + long +"&intent=browse&query=recycling";
+
+  //AJAX call for Foursquare
+  $.ajax({
+    url: foursquareQueryUrl,
+    method: "GET"
+  })
+  .then(function(response) {
+    var recyclingCenterName = response.response.venues[0].name;
+    var recyclingCenterAddress = response.response.venues[0].location.address;
+    var recyclingCenterLat =response.response.venues[0].location.lat;
+    var recyclingCenterLong = response.response.venues[0].location.lng;
+
+    //console logs for recycling query search
+    console.log(response);
+    console.log(response.response.venues[0].name);
+    //appends venues to the page -- not currently working
+    $("#recyclingName").append(recyclingCenterName);
+    $("#recyclingLocation").append(recyclingCenterAddress);
+
+  }); 
 })
 
 })
-
 
