@@ -54,15 +54,19 @@ $("#submit").on("click", function(event){
   // Foursquare API
   let clientID = "3C4SB3NU2CPTLYSZRFHY0W032YTEPL2OKYALGGW2XZSGQJYL";
   let clientSecret = "C2RQWRLPF5ROBLCFVEBZKFPBMARI2RBRMWBMXH4K1SQBBZPF";
-  let foursquareQueryUrl = ("https://api.foursquare.com/v2/venues/explore?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&limit=1&ll=" + lat +"," + long +"&query=recycling")
+  let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&ll=" + lat +"," + long +"&query=recycling";
+
+  //don't mess witht this just in case
+  // let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&limit=10&ll=" + lat +"," + long +"&intent=browse&query=recycling";
 
   $.ajax({
     url: foursquareQueryUrl,
     method: "GET"
   })
   .then(function(response) {
-    console.log(response)
-    $("#recycling").append(this.response);
+    console.log(response);
+    console.log(response.venues);
+    $("#recycling").append(response.venues);
   }); 
 })
 
