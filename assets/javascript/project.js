@@ -1,4 +1,9 @@
-
+let city;
+let temperature;
+let humidity;
+let seaLevel;
+let lat;
+let long;
 //weather api ajax call 
 $("#submit").on("click", function(event){
   //hide the search bar after the initial search is made
@@ -6,11 +11,12 @@ $("#submit").on("click", function(event){
   event.preventDefault();
   //take the user input and store it in the variable userInput, then pass it into the queryUrl so that users can get custom info from ajax call
   let userInput = $("#city-search").val();
-  let queryUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7eb8a9862ffc258b2705e3176ca3ab15&q=" + userInput + "&units=imperial";
+  let weatherQueryUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7eb8a9862ffc258b2705e3176ca3ab15&q=" + userInput + "&units=imperial";
   //actual call
   $.ajax({
-  url: queryUrl,
+  url: weatherQueryUrl,
   method: "GET"
+  
 }).then(function(response) { //promise
   console.log(response);
   //set variables to avoid repeated dot notation
@@ -43,9 +49,22 @@ $("#submit").on("click", function(event){
       center: ol.proj.fromLonLat([long,lat]), //use long and lat variables we got from the open weather map api to change the map's display
       zoom: 14 //sets default zoom for map 
     })
-  });  
+  }); 
+
+  // Foursquare API
+  let clientID = "3C4SB3NU2CPTLYSZRFHY0W032YTEPL2OKYALGGW2XZSGQJYL";
+  let clientSecret = "C2RQWRLPF5ROBLCFVEBZKFPBMARI2RBRMWBMXH4K1SQBBZPF";
+  let foursquareQueryUrl = ("https://api.foursquare.com/v2/venues/explore?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&limit=1&ll=" + lat +"," + long +"&query=recycling")
+
+  $.ajax({
+    url: foursquareQueryUrl,
+    method: "GET"
+  })
+  .then(function(response) {
+    console.log(response)
+    $("#recycling").append(this.response);
+  }); 
 })
 
 })
-
 
