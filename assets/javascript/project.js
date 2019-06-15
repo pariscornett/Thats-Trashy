@@ -1,11 +1,23 @@
-
+//global variables
+let userInput = $("#city-search").val(); 
+//form validation function
+function validateSearch() {
+  if(userInput == ""){
+    alert("please enter a city name");
+    return false;
+  } else {
+    runLocation();
+  }
+}; 
 //weather api ajax call 
-$("#submit").on("click", function(event){
+$("#submit").on("click", function runLocation(event){ 
+  event.preventDefault();
+  validateSearch();
   //hide the search bar after the initial search is made
   $("#initial-search-box").hide();
-  event.preventDefault();
+ 
   //take the user input and store it in the variable userInput, then pass it into the queryUrl so that users can get custom info from ajax call
-  let userInput = $("#city-search").val();
+  let userInput = $("#city-search").val(); 
   let queryUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7eb8a9862ffc258b2705e3176ca3ab15&q=" + userInput + "&units=imperial";
   //actual call
   $.ajax({
@@ -45,7 +57,5 @@ $("#submit").on("click", function(event){
     })
   });  
 })
-
 })
-
 
