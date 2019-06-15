@@ -56,16 +56,19 @@ $("#submit").on("click", function(event){
   let clientSecret = "C2RQWRLPF5ROBLCFVEBZKFPBMARI2RBRMWBMXH4K1SQBBZPF";
   let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&ll=" + lat +"," + long +"&query=recycling";
 
-  //don't mess witht this just in case
+  //don't mess with this just in case
   // let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&limit=10&ll=" + lat +"," + long +"&intent=browse&query=recycling";
 
+  //AJAX call for Foursquare
   $.ajax({
     url: foursquareQueryUrl,
     method: "GET"
   })
   .then(function(response) {
+    //console logs for recycling query search
     console.log(response);
     console.log(response.venues);
+    //appends venues to the page -- not currently working
     $("#recycling").append(response.venues);
   }); 
 })
