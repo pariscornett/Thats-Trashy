@@ -65,11 +65,18 @@ $("#submit").on("click", function(event){
     method: "GET"
   })
   .then(function(response) {
+    var recyclingCenterName = response.response.venues[0].name;
+    var recyclingCenterAddress = response.response.venues[0].location.address;
+    var recyclingCenterLat =response.response.venues[0].location.lat;
+    var recyclingCenterLong = response.response.venues[0].location.lng;
+
     //console logs for recycling query search
     console.log(response);
-    console.log(response.venues);
+    console.log(response.response.venues[0].name);
     //appends venues to the page -- not currently working
-    $("#recycling").append(response.venues);
+    $("#recyclingName").append(recyclingCenterName);
+    $("#recyclingLocation").append(recyclingCenterAddress);
+
   }); 
 })
 
