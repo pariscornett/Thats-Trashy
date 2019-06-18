@@ -1,12 +1,11 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #acbcd1;
     color: #292b39;
+    background-image: url(../images/leaves.png)
 }
 
 #weather-display {
     padding-top: 10px;
-    color: #292b39;
 }
 
 #map {
@@ -18,16 +17,4 @@ body {
 
 #submit {
     background-color: #292b39;
-}
-
-#city-search {
-    color: #292b39;
-}
-
-#recyclingName {
-    color: #292b39;
-}
-
-#recyclingLocation {
-    color: #292b39;
 }
