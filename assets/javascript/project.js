@@ -59,8 +59,7 @@ $("#submit").on("click", function runLocation(event){
         zoom: 14 //sets default zoom for map 
       })
     });  
-  })
-  // Foursquare API
+     // Foursquare API
   let clientID = "3C4SB3NU2CPTLYSZRFHY0W032YTEPL2OKYALGGW2XZSGQJYL";
   let clientSecret = "C2RQWRLPF5ROBLCFVEBZKFPBMARI2RBRMWBMXH4K1SQBBZPF";
   let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&ll=" + lat +"," + long +"&query=recycling";
@@ -87,6 +86,8 @@ $("#submit").on("click", function runLocation(event){
     $("#recyclingLocation").append(recyclingCenterAddress);
 
   }); 
+  })
+ 
   }
  
 })
