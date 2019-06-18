@@ -1,7 +1,8 @@
-//global variables
-let userInput = $("#city-search").val(); 
 //form validation function
+var userInput = "";
+
 function validateSearch() {
+  console.log(userInput);
   if(userInput == ""){
     alert("please enter a city name");
     return false;
@@ -9,9 +10,11 @@ function validateSearch() {
     return true;
   }
 }; 
+
 //weather api ajax call 
 $("#submit").on("click", function runLocation(event){ 
   event.preventDefault();
+  userInput = $("#city-search").val(); 
   if ( validateSearch() === true){
     //hide the search bar after the initial search is made
     $("#initial-search-box").hide();
