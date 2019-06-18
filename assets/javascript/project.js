@@ -73,7 +73,7 @@ $("#submit").on("click", function(event){
     //console logs for recycling query search
     console.log(response);
     console.log(response.response.venues[0].name);
-    //appends venues to the page -- not currently working
+    //appends venues to the page
     $("#recyclingName").append(recyclingCenterName);
     $("#recyclingLocation").append(recyclingCenterAddress);
 
