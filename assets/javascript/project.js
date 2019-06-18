@@ -60,6 +60,33 @@ $("#submit").on("click", function runLocation(event){
       })
     });  
   })
+  // Foursquare API
+  let clientID = "3C4SB3NU2CPTLYSZRFHY0W032YTEPL2OKYALGGW2XZSGQJYL";
+  let clientSecret = "C2RQWRLPF5ROBLCFVEBZKFPBMARI2RBRMWBMXH4K1SQBBZPF";
+  let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&ll=" + lat +"," + long +"&query=recycling";
+
+  //don't mess with this just in case
+  // let foursquareQueryUrl = "https://api.foursquare.com/v2/venues/search?client_id=" + clientID + "&client_secret=" + clientSecret + "&v=20180323&limit=10&ll=" + lat +"," + long +"&intent=browse&query=recycling";
+
+  //AJAX call for Foursquare
+  $.ajax({
+    url: foursquareQueryUrl,
+    method: "GET"
+  })
+  .then(function(response) {
+    var recyclingCenterName = response.response.venues[0].name;
+    var recyclingCenterAddress = response.response.venues[0].location.address;
+    var recyclingCenterLat =response.response.venues[0].location.lat;
+    var recyclingCenterLong = response.response.venues[0].location.lng;
+
+    //console logs for recycling query search
+    console.log(response);
+    console.log(response.response.venues[0].name);
+    //appends venues to the page -- not currently working
+    $("#recyclingName").append(recyclingCenterName);
+    $("#recyclingLocation").append(recyclingCenterAddress);
+
+  }); 
   }
  
 })
