@@ -18,7 +18,7 @@ $("#submit").on("click", function(event){
   method: "GET"
   
 }).then(function(response) { //promise
-  console.log(response);
+  // console.log(response);
   //set variables to avoid repeated dot notation
   let city = response.city.name;
   let temperature = parseInt(response.list[0].main.temp);
@@ -26,12 +26,12 @@ $("#submit").on("click", function(event){
   let seaLevel = response.list[0].main.sea_level;
   let lat = response.city.coord.lat;
   let long = response.city.coord.lon;
-  console.log("city: " + city);
-  console.log("temperature: " + temperature);
-  console.log("humidity: " + humidity);
-  console.log("sea level: " + seaLevel);
-  console.log("latitude: " + lat);
-  console.log("longitude: " + long);
+  // console.log("city: " + city);
+  // console.log("temperature: " + temperature);
+  // console.log("humidity: " + humidity);
+  // console.log("sea level: " + seaLevel);
+  // console.log("latitude: " + lat);
+  // console.log("longitude: " + long);
   //display info retrieved to DOM, except the lat and long info, which will be used below with the open layers map
   $("#weather-display").append("<div class = city-info>" + city + "'s Current Weather Stats: ");
   $(".city-info").append("<div class = temperature> Temperature: "+ temperature +"&#8457;");
@@ -64,19 +64,16 @@ $("#submit").on("click", function(event){
     url: foursquareQueryUrl,
     method: "GET"
   })
-  .then(function(response) {
-    var recyclingCenterName = response.response.venues[0].name;
-    var recyclingCenterAddress = response.response.venues[0].location.address;
-    var recyclingCenterLat =response.response.venues[0].location.lat;
-    var recyclingCenterLong = response.response.venues[0].location.lng;
-
-    //console logs for recycling query search
-    console.log(response);
-    console.log(response.response.venues[0].name);
-    //appends venues to the page -- not currently working
-    $("#recyclingName").append(recyclingCenterName);
-    $("#recyclingLocation").append(recyclingCenterAddress);
-
+  .then(function(response) { 
+  var listTitle = "Recycling centers near " + userInput;
+  $( "#listTitle").text(listTitle)
+    for (var i = 0; i <10; i++){
+    // console.log(response.response.venues[i].name)
+    var item =$("<p>")
+    item.text(response.response.venues[i].name)
+    // console.log(item) 
+    $("#centerList").append(item)
+    }
   }); 
 })
 
