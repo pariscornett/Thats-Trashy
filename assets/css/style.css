@@ -18,3 +18,8 @@ body {
 #submit {
     background-color: #292b39;
 }
+
+#city-search {
+    background-color: #ffffff;
+    margin-top: 10px;
+}
