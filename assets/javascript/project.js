@@ -4,9 +4,13 @@ let humidity;
 let seaLevel;
 let lat;
 let long;
+
+//hide button when page is initially loaded
+$("#fly-buttons").hide();
 //weather api ajax call 
 $("#submit").on("click", function(event){
   //hide the search bar after the initial search is made
+  $("#fly-buttons").show();
   $("#initial-search-box").hide();
   event.preventDefault();
   //take the user input and store it in the variable userInput, then pass it into the queryUrl so that users can get custom info from ajax call
@@ -70,12 +74,51 @@ $("#submit").on("click", function(event){
     var recyclingCenterLat =response.response.venues[0].location.lat;
     var recyclingCenterLong = response.response.venues[0].location.lng;
 
+
     //console logs for recycling query search
     console.log(response);
     console.log(response.response.venues[0].name);
     //appends venues to the page
     $("#recyclingName").append(recyclingCenterName);
     $("#recyclingLocation").append(recyclingCenterAddress);
+
+    //function for fly animation with map
+    function flyTo(location, done) {
+      var duration = 2000;
+      var zoom = view.getZoom();
+      var parts = 2;
+      var called = false;
+      function callback(complete) {
+        --parts;
+        if (called) {
+          return;
+        }
+        if (parts === 0 || !complete) {
+          called = true;
+          done(complete);
+        }
+      }
+      view.animate({
+        center: location,
+        duration: duration
+      }, callback);
+      view.animate({
+        zoom: zoom - 1,
+        duration: duration / 2
+      }, {
+        zoom: zoom,
+        duration: duration / 2
+      }, callback);
+    }
+
+    // onClick('fly-to-bern', function() {
+    //   flyTo(recyclingCenterLong + recyclingCenterLat, function() {});
+    // });
+
+    $("#fly-to-bern").on("click", function(){
+      flyTo(recyclingCenterLong + recyclingCenterLat, function() {});
+    });
+
 
   }); 
 })
