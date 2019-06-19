@@ -78,6 +78,7 @@ $("#submit").on("click", function runLocation(event){
     .then(function(response) { 
       console.log(response);
       var listTitle = "Recycling Centers near " + userInput + ":";
+      
       $( "#listTitle").text(listTitle)
         for (var i = 0; i <10; i++){
         // console.log(response.response.venues[i].name)
@@ -95,6 +96,9 @@ $("#submit").on("click", function runLocation(event){
         $("#centerList").append(itemCrossStreet)
         $("#centerList").append(itemBreak)
         }
+      
+      // var recyclingFAQ = $("<a href=" + recyclingFAQ.html + ">For more information about what plastics to recycle, click here.</a>")
+      //   $("#moreInfo").append(recyclingFAQ)
       }); 
     })
   }
