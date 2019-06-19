@@ -76,16 +76,26 @@ $("#submit").on("click", function runLocation(event){
       method: "GET"
     })
     .then(function(response) { 
-    var listTitle = "Recycling centers near " + userInput;
-    $( "#listTitle").text(listTitle)
-      for (var i = 0; i <10; i++){
-      // console.log(response.response.venues[i].name)
-      var item =$("<p>")
-      item.text(response.response.venues[i].name)
-      // console.log(item) 
-      $("#centerList").append(item)
-      }
-    }); 
-  })
+      console.log(response);
+      var listTitle = "Recycling Centers near " + userInput + ":";
+      $( "#listTitle").text(listTitle)
+        for (var i = 0; i <10; i++){
+        // console.log(response.response.venues[i].name)
+        var itemName =$("<p>")
+        var itemLocation =$("<p>")
+        var itemCrossStreet = $("<p>")
+        var itemBreak =$("<br />")
+
+        itemName.text(response.response.venues[i].name)
+        itemLocation.text(response.response.venues[i].location.address)
+        itemCrossStreet.text(response.response.venues[i].location.crossStreet)
+        // console.log(item) 
+        $("#centerList").append(itemName)
+        $("#centerList").append(itemLocation)
+        $("#centerList").append(itemCrossStreet)
+        $("#centerList").append(itemBreak)
+        }
+      }); 
+    })
   }
 })
