@@ -23,3 +23,20 @@ body {
     background-color: #ffffff;
     margin-top: 10px;
 }
+
+#centerList {
+    margin-bottom: 10px;
+}
+
+img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.faqHeader {
+    padding-top:10px;
+}
+
+#faqInfo {
+    margin-bottom: 20px;
+}

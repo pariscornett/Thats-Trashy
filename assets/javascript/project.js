@@ -97,8 +97,7 @@ $("#submit").on("click", function runLocation(event){
         $("#centerList").append(itemBreak)
         }
       
-      // var recyclingFAQ = $("<a href=" + recyclingFAQ.html + ">For more information about what plastics to recycle, click here.</a>")
-      //   $("#moreInfo").append(recyclingFAQ)
+      // var recyclingFAQ = $("<a href=" + recycling
       }); 
     })
   }
