@@ -1,11 +1,10 @@
 //form validation function
 var userInput = "";
-// var instance = $M.Modal.getInstance(elem);
 
 function validateSearch() {
   console.log(userInput);
   if(userInput == ""){
-    alert("please enter a city name");
+    alert("Please Enter a City Name");
     // $('.modal').modal('methodName');
     return false;
   } else {

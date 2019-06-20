@@ -21,7 +21,16 @@
             <button class="btn waves-effect waves-light" type="submit" name="action" id = "submit">Submit
                 <i class="material-icons right"></i>
             </button>
-        </form>
+            <li class="pop-up" style="display: none;"> <!-- Class of pop-up so we can display only when submitted and no city is entered. display:none so it does not display when page is refreshed-->
+                <a href="#" class="modal-trigger" data-target="modal-warning">Warning</a> <!--When Submit is clicked, "modal-warning" will pop up (enter city)-->
+            </li>
+            <div id="modal-warning" class="modal"> <!-- because id="modal-warning," this modal pops up when data-target="modal-warning" (Warning button) is clicked -->
+                <div class="modal-content center-align black-text"> <!--content of the modal-->
+                    <h3>Warning details</h3><br /> <!--Shows up at the top of the modal, like a heading-->
+                    <div class="warning-details"></div>
+                </div>
+            </div>    
+        </form>   
         <div id = "weather-display">
             <!--Weather Info Displayed Here Using jQuery-->
             <span id="weather-display"></span>
