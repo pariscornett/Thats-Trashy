@@ -22,7 +22,7 @@ $("#submit").on("click", function runLocation(event){
     $("#initial-search-box").hide();
     //take the user input and store it in the variable userInput, then pass it into the queryUrl so that users can get custom info from ajax call
     let userInput = $("#city-search").val(); 
-    let weatherQueryUrl = "http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7eb8a9862ffc258b2705e3176ca3ab15&q=" + userInput + "&units=imperial";
+    let weatherQueryUrl = "https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=7eb8a9862ffc258b2705e3176ca3ab15&q=" + userInput + "&units=imperial";
     validateSearch();
     //actual call
     $.ajax({
