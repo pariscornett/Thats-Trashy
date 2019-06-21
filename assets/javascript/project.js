@@ -88,7 +88,7 @@ $("#submit").on("click", function runLocation(event) {
       })
         .then(function (response) {
           console.log(response);
-          var listTitle = userInput + " recycling centers :";
+          var listTitle = userInput + " Recycling Centers :";
 
           $("#listTitle").text(listTitle)
           for (var i = 0; i < 10; i++) {
@@ -114,10 +114,13 @@ $("#submit").on("click", function runLocation(event) {
 
         });
     })
-    var moreInfoBtn = $("<btn>")
-    faqURL = "assets/recyclingFAQ.html";
+    var moreInfoBtn = $("<button>")
+    var faqURL = "assets/recyclingFAQ.html";
+    // var showMore = "Show More"
     moreInfoBtn = "<a href=" + faqURL + ">See More</a>"
     $("#moreInfo").append(moreInfoBtn);
+    // moreInfoBtn.attr( "<a href =" + faqURL + "class=btn-floating btn-large waves-effect waves-light red><i class=material-icons>add</i></a>")
+    // $("#moreInfo").append(moreInfoBtn);
   }
 })
 
