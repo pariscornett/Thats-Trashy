@@ -2,17 +2,29 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #292b39;
-    background-image: url(../images/leaves.png)
+    background-color:#9e9b29;
+}
+
+form {
+position:relative;
+top: 250px;
 }
 
 #weather-display {
-    padding-top: 10px;
+    background-color:
+    #bdd78c;
+}
+
+#recycling-centers {
+    background-color:
+    #bdd78c
 }
 
 #map {
+    position:relative;
     height: 500px;
-    width: 800px;
-    margin-top: 20px auto;
+    width: 600px;
+    left: 400px;
 }
 
 #submit {
