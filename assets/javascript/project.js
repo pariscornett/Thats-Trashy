@@ -90,11 +90,9 @@ $("#submit").on("click", function runLocation(event) {
             var itemBreak = $("<br />")
 
             itemName.text(response.response.venues[i].name)
-            itemLocation.text(response.response.venues[i].location.address)
-            itemCrossStreet.text(response.response.venues[i].location.crossStreet)
             // Formatted Address:
-            // itemLocation.text(response.response.venues[i].location.formattedAddress[0])
-            // itemCrossStreet.text(response.response.venues[i].location.formattedAddress[1])
+            itemLocation.text(response.response.venues[i].location.formattedAddress[0])
+            itemCrossStreet.text(response.response.venues[i].location.formattedAddress[1])
             $("#centerList").append(itemName)
             $("#centerList").append(itemLocation)
             $("#centerList").append(itemCrossStreet)
@@ -111,6 +109,7 @@ $("#submit").on("click", function runLocation(event) {
     var faqURL = "assets/recyclingFAQ.html";
     // var showMore = "Show More"
     moreInfoBtn = "<a href=" + faqURL + ">See More</a>"
+    // moreInfoBtn.attr( "<a href =" + faqURL + "" + "class=btn-floating btn-large waves-effect waves-light red><i class=material-icons>See more</i></a>")
     $("#moreInfo").append(moreInfoBtn);
     // moreInfoBtn.attr( "<a href =" + faqURL + "class=btn-floating btn-large waves-effect waves-light red><i class=material-icons>add</i></a>")
     // $("#moreInfo").append(moreInfoBtn);

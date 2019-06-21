@@ -45,6 +45,7 @@ top: 200px;
     margin-right:5px;
     font-family: 'Noto Sans HK', sans-serif;
     color:#ffffff;
+    overflow-y: scroll;
 }
 
 #listTitle{
