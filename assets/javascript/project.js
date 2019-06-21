@@ -3,7 +3,6 @@ var userInput = "";
 // var instance = $M.Modal.getInstance(elem);
 
 function validateSearch() {
-  console.log(userInput);
   if (userInput == "") {
     alert("please enter a city name");
     // $('.modal').modal('methodName');
@@ -40,7 +39,6 @@ $("#submit").on("click", function runLocation(event) {
       url: weatherQueryUrl,
       method: "GET"
     }).then(function (response) { //promise
-      // console.log(response);
       //set variables to avoid repeated dot notation
       let city = response.city.name;
       let temperature = parseInt(response.list[0].main.temp);
@@ -48,12 +46,7 @@ $("#submit").on("click", function runLocation(event) {
       let seaLevel = parseInt(response.list[0].main.sea_level);
       let lat = response.city.coord.lat;
       let long = response.city.coord.lon;
-      // console.log("city: " + city);
-      // console.log("temperature: " + temperature);
-      // console.log("humidity: " + humidity);
-      // console.log("sea level: " + seaLevel);
-      // console.log("latitude: " + lat);
-      // console.log("longitude: " + long);
+      
       //display info retrieved to DOM, except the lat and long info, which will be used below with the open layers map
       $("#weather-display").append("<div class = city-info>" + city + "'s Current Weather Stats: ");
       $(".city-info").append("<div class = temperature> Temperature: " + temperature + "&#8457;");
@@ -87,12 +80,10 @@ $("#submit").on("click", function runLocation(event) {
         method: "GET"
       })
         .then(function (response) {
-          console.log(response);
           var listTitle = userInput + " Recycling Centers :";
 
           $("#listTitle").text(listTitle)
           for (var i = 0; i < 10; i++) {
-            // console.log(response.response.venues[i].name)
             var itemName = $("<p>")
             var itemLocation = $("<p>")
             var itemCrossStreet = $("<p>")
@@ -104,7 +95,6 @@ $("#submit").on("click", function runLocation(event) {
             // Formatted Address:
             // itemLocation.text(response.response.venues[i].location.formattedAddress[0])
             // itemCrossStreet.text(response.response.venues[i].location.formattedAddress[1])
-            // console.log(item) 
             $("#centerList").append(itemName)
             $("#centerList").append(itemLocation)
             $("#centerList").append(itemCrossStreet)
@@ -137,7 +127,6 @@ function generateMarkers(map, data) {
     var long = data.response.venues[i].location.lng;
     var label = data.response.venues[i].name;
 
-    console.log(lat)
     var marker = new ol.Feature({
       geometry: new ol.geom.Point(
         ol.proj.fromLonLat([long, lat])
