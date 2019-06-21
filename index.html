@@ -21,44 +21,47 @@
 <body>
     <div class="container">
         <div class="row">
-            <form id="initial-search-box">
-                <input type="text" id="city-search" placeholder="Enter Your City Name">
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
-                    <i class="material-icons right"></i>
-                </button>
-            </form>
-        </div>
-
-        <div class="row">
-            <div id="weather-display" class="custom-card">
-                <!--Weather Info Displayed Here Using jQuery-->
-                <span id="weather-display"></span>
+            <div class = "col l12">
+                    <form id="initial-search-box">
+                        <input type="text" id="city-search" placeholder=" Enter Your City Name">
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                            <i class="material-icons right"></i>
+                        </button>
+                    </form>
             </div>
         </div>
 
         <div class="row">
-            <div id="map">
-                <!--Map Displayed Here using jQuery and Open Layers Map-->
-            </div>
+                <div class = "offset-l3 col l6 offset-l3 z-depth-5" id = "weather-display">
+                    <!--Weather Info Displayed Here Using jQuery-->
+                    <span id="weather-display"></span>
+                </div>
         </div>
 
         <div class="row">
-            <div>
-                <!-- Display the recycing centers -->
-                <h2 id="listTitle"></h2>
-                <br />
-                <div id="centerList"> </div>
+            <div class = "col l6">
+                    <div id = "recycling-centers" class = "z-depth-5">
+                        <!-- Display the recycing centers -->
+                        <h2 id="listTitle" class = "z-depth-5"></h2>
+                        <br />
+                        <div id="centerList"> </div>
+                    </div>
             </div>
+           
+            <div class = "col l6">
+                <div id="map" class = "z-depth-5">
+                    <!--Map Displayed Here using jQuery and Open Layers Map-->
+                </div>
+            </div>
+         
         </div>
 
         <div class="row">
-            <div>
+            <div class = "col l12">
                 <!-- More info -->
                 <div id="moreInfo"></div>
             </div>
         </div>
-
-
     </div>
 
 

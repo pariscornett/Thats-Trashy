@@ -2,30 +2,58 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     color: #292b39;
-    background-image: url(../images/leaves.png)
+    background-color:#bdd78c;
+
+}
+
+form {
+position:relative;
+top: 250px;
 }
 
 #weather-display {
-    padding-top: 10px;
+   text-align:center; 
+   background-color:#26a69a;
+   font-size: 20px;
+   font-family: 'Noto Sans HK', sans-serif;
+   color:#ffffff;;
 }
+
+
+#recycling-centers {
+    height: 575px;
+    width: 500px;
+    background-color:#26a69a;
+    margin-right:5px;
+    font-family: 'Noto Sans HK', sans-serif;
+    color:#ffffff;
+}
+
+#listTitle{
+    height: 50px;
+    font-size: 30px;
+    text-align:center;
+    background-color:#bdd78c;
+    color: #26a69a;
+}
+
+#centerList {
+    position:relative;
+    top: 10px;
+    text-align:center;
+}
+
 
 #map {
-    height: 500px;
-    width: 800px;
-    margin-top: 20px auto;
-}
-
-#submit {
-    background-color: #292b39;
+    height: 575px;
+    width: 500px;
+    margin-left: 5px;
+    font-family: 'Noto Sans HK', sans-serif;
 }
 
 #city-search {
     background-color: #ffffff;
-    margin-top: 10px;
-}
-
-#centerList {
-    margin-bottom: 10px;
+    font-family: 'Noto Sans HK', sans-serif;
 }
 
 img {
@@ -40,3 +68,4 @@ img {
 #faqInfo {
     margin-bottom: 20px;
 }
+

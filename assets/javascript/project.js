@@ -13,12 +13,20 @@ function validateSearch() {
   }
 };
 
+//hide map and weather box before submit is clicked
+$("#weather-display").hide();
+$("#recycling-centers").hide();
+$("#map").hide();
+
 //weather api ajax call 
 $("#submit").on("click", function runLocation(event) {
   event.preventDefault();
   userInput = $("#city-search").val();
   if (validateSearch() === true) {
-
+    //show map and weather box before submit is clicked
+    $("#weather-display").show();
+    $("#recycling-centers").show();
+    $("#map").show();
     //hide the search bar after the initial search is made
     $("#initial-search-box").hide();
 
@@ -37,7 +45,7 @@ $("#submit").on("click", function runLocation(event) {
       let city = response.city.name;
       let temperature = parseInt(response.list[0].main.temp);
       let humidity = response.list[0].main.humidity;
-      let seaLevel = response.list[0].main.sea_level;
+      let seaLevel = parseInt(response.list[0].main.sea_level);
       let lat = response.city.coord.lat;
       let long = response.city.coord.lon;
       // console.log("city: " + city);
@@ -61,7 +69,7 @@ $("#submit").on("click", function runLocation(event) {
         ],
         view: new ol.View({
           center: ol.proj.fromLonLat([long, lat]), //use long and lat variables we got from the open weather map api to change the map's display
-          zoom: 14 //sets default zoom for map 
+          zoom: 12 //sets default zoom for map 
         })
       });
 
@@ -80,7 +88,7 @@ $("#submit").on("click", function runLocation(event) {
       })
         .then(function (response) {
           console.log(response);
-          var listTitle = "Recycling Centers near " + userInput + ":";
+          var listTitle = userInput + " Recycling Centers :";
 
           $("#listTitle").text(listTitle)
           for (var i = 0; i < 10; i++) {
@@ -106,10 +114,13 @@ $("#submit").on("click", function runLocation(event) {
 
         });
     })
-    var moreInfoBtn = $("<btn>")
-    faqURL = "assets/recyclingFAQ.html";
-    moreInfoBtn = "<a href=" + faqURL + ">Click here for more infomation about what plastics are recyclable.</a>"
+    var moreInfoBtn = $("<button>")
+    var faqURL = "assets/recyclingFAQ.html";
+    // var showMore = "Show More"
+    moreInfoBtn = "<a href=" + faqURL + ">See More</a>"
     $("#moreInfo").append(moreInfoBtn);
+    // moreInfoBtn.attr( "<a href =" + faqURL + "class=btn-floating btn-large waves-effect waves-light red><i class=material-icons>add</i></a>")
+    // $("#moreInfo").append(moreInfoBtn);
   }
 })
 
