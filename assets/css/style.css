@@ -15,16 +15,13 @@ top: 250px;
     #bdd78c;
 }
 
-#recycling-centers {
-    background-color:
-    #bdd78c
-}
+
 
 #map {
-    position:relative;
+
     height: 500px;
     width: 600px;
-    left: 400px;
+
 }
 
 #submit {
