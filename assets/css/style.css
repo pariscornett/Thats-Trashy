@@ -20,7 +20,7 @@ body {
     font-size: 300%;
 }
 
-.thatsTrashySub {
+#thatsTrashySub {
     font-size: 125%;
 }
 
@@ -53,6 +53,7 @@ top: 200px;
     text-align:center;
     background-color:#bdd78c;
     color: #26a69a;
+    padding:10px;
 }
 
 #centerList {
@@ -77,9 +78,6 @@ top: 200px;
 img {
     margin-top: 20px;
     margin-bottom: 20px;
-    /* text-align: center; */
-    /* position: relative;
-    right: 150px; */
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -92,9 +90,8 @@ img {
 #faqInfo {
     margin-bottom: 20px;
     background-color:#26a69a;
-    margin-right:5px;
     font-family: 'Noto Sans HK', sans-serif;
     color:#ffffff;
-    padding: 10px;
+    padding:10px;
 }
 
