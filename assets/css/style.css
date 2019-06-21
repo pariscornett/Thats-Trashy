@@ -3,6 +3,7 @@ body {
     font-weight: 300;
     color: #292b39;
     background-color:#bdd78c;
+
 }
 
 form {
@@ -12,28 +13,32 @@ top: 250px;
 
 #weather-display {
    text-align:center; 
-   background-color:#aad3df;
+   background-color:#26a69a;
    font-size: 20px;
    font-family: 'Noto Sans HK', sans-serif;
+   opacity: 0.8;
+   color:white;
 }
 
+
 #recycling-centers {
-    height: 500px;
+    height: 550px;
     width: 500px;
     text-align:center;
-    background-color:#aad3df;
+    background-color:#26a69a;
     margin-right:5px;
     font-family: 'Noto Sans HK', sans-serif;
+    opacity: 0.8;
+    font-size: 16px;
+    color: white;
 }
 
 
 #map {
-    height: 500px;
+    height: 550px;
     width: 500px;
     margin-left: 5px;
 }
-
-
 
 #city-search {
     background-color: #ffffff;

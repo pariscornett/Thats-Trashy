@@ -116,7 +116,7 @@ $("#submit").on("click", function runLocation(event) {
     })
     var moreInfoBtn = $("<btn>")
     faqURL = "assets/recyclingFAQ.html";
-    moreInfoBtn = "<a href=" + faqURL + ">Click here for more infomation about what plastics are recyclable.</a>"
+    moreInfoBtn = "<a href=" + faqURL + ">See More</a>"
     $("#moreInfo").append(moreInfoBtn);
   }
 })
