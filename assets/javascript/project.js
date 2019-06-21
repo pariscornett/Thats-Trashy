@@ -61,7 +61,7 @@ $("#submit").on("click", function runLocation(event) {
         ],
         view: new ol.View({
           center: ol.proj.fromLonLat([long, lat]), //use long and lat variables we got from the open weather map api to change the map's display
-          zoom: 14 //sets default zoom for map 
+          zoom: 12 //sets default zoom for map 
         })
       });
 
@@ -80,7 +80,7 @@ $("#submit").on("click", function runLocation(event) {
       })
         .then(function (response) {
           console.log(response);
-          var listTitle = "Recycling Centers near " + userInput + ":";
+          var listTitle = userInput + " recycling centers :";
 
           $("#listTitle").text(listTitle)
           for (var i = 0; i < 10; i++) {

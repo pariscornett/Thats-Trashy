@@ -11,17 +11,18 @@ top: 250px;
 }
 
 #weather-display {
-    background-color:
-    #bdd78c;
+   text-align:center;
+}
+
+#recycling-centers {
+    text-align:center;
 }
 
 
-
 #map {
-
     height: 500px;
     width: 600px;
-
+    border-radius: 15px 50px;
 }
 
 #submit {
