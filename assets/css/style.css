@@ -11,21 +11,26 @@ top: 250px;
 }
 
 #weather-display {
-   text-align:center;
-   box-shadow: 5px 5px 5px 5px #9e9b29;
+   text-align:center; 
+   background-color:#aad3df;
+   font-size: 20px;
+   font-family: 'Noto Sans HK', sans-serif;
 }
 
 #recycling-centers {
     height: 500px;
+    width: 500px;
     text-align:center;
-    box-shadow: 5px 5px 5px 5px #9e9b29;
+    background-color:#aad3df;
+    margin-right:5px;
+    font-family: 'Noto Sans HK', sans-serif;
 }
 
 
 #map {
     height: 500px;
-    width: 600px;
-    box-shadow: 5px 5px 5px 5px #9e9b29;
+    width: 500px;
+    margin-left: 5px;
 }
 
 
