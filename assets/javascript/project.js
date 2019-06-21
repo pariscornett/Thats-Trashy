@@ -101,6 +101,9 @@ $("#submit").on("click", function runLocation(event) {
             itemName.text(response.response.venues[i].name)
             itemLocation.text(response.response.venues[i].location.address)
             itemCrossStreet.text(response.response.venues[i].location.crossStreet)
+            // Formatted Address:
+            // itemLocation.text(response.response.venues[i].location.formattedAddress[0])
+            // itemCrossStreet.text(response.response.venues[i].location.formattedAddress[1])
             // console.log(item) 
             $("#centerList").append(itemName)
             $("#centerList").append(itemLocation)
