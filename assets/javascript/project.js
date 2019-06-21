@@ -13,12 +13,20 @@ function validateSearch() {
   }
 };
 
+//hide map and weather box before submit is clicked
+$("#weather-display").hide();
+$("#recycling-centers").hide();
+$("#map").hide();
+
 //weather api ajax call 
 $("#submit").on("click", function runLocation(event) {
   event.preventDefault();
   userInput = $("#city-search").val();
   if (validateSearch() === true) {
-
+    //show map and weather box before submit is clicked
+    $("#weather-display").show();
+    $("#recycling-centers").show();
+    $("#map").show();
     //hide the search bar after the initial search is made
     $("#initial-search-box").hide();
 
@@ -37,7 +45,7 @@ $("#submit").on("click", function runLocation(event) {
       let city = response.city.name;
       let temperature = parseInt(response.list[0].main.temp);
       let humidity = response.list[0].main.humidity;
-      let seaLevel = response.list[0].main.sea_level;
+      let seaLevel = parseInt(response.list[0].main.sea_level);
       let lat = response.city.coord.lat;
       let long = response.city.coord.lon;
       // console.log("city: " + city);
