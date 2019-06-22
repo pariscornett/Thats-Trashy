@@ -4,7 +4,7 @@ var userInput = "";
 
 function validateSearch() {
   if (userInput == "") {
-    alert("please enter a city name");
+    // alert("please enter a city name");
     // $('.modal').modal('methodName');
     return false;
   } else {
