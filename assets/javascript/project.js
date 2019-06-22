@@ -13,9 +13,11 @@ function validateSearch() {
   }
 };
 
-$("#myButton").on("click",function(){
-$('myModal').modal('show'+ city);
+// 
+$(document).ready(function(){
+  $('.modal').modal();
 });
+
 
 //hide map and weather box before submit is clicked
 $("#weather-display").hide();
