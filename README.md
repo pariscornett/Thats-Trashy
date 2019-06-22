@@ -17,5 +17,5 @@ https://micaelabray.github.io/ProjectOne/
 Contact information:
 -Micaela Bray (micaela.bray@gmail.com)
 -Paris Cornett (pariscornett@gmail.com)
--LaToys Hill (latoya.rhill@gmail.com)
+-LaToya Hill (latoya.rhill@gmail.com)
 -Alec Down (alecdown@gmail.com)
