@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>That's Trashy</title>
-   <!--Materialize-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Favicon Link -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <!--Materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Reset CSS file -->
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <!-- External CSS file -->
@@ -15,10 +17,22 @@
     <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
 
 <body>
+    <div class="container z-depth-5 trashyHeader">
+            <div class="row thatsTrashy">
+                <div class="col l12">
+                    That's Trashy
+                </div>
+            </div>
+            <div class="row thatsTrashySub">
+                <div class="col l12">
+                    What is and is not recyclable?
+                </div>
+            </div>
+        </div>
     <div class = "container">
-        <h2 class="faqHeader">What is and is not recyclable?</h2>
-        <img src="images/recyclable.jpeg" alt="recyclable">
-        <p id="faqInfo">
+        <!-- <h2 class="faqHeader">What is and is not recyclable?</h2> -->
+        <img src="images/recyclable.jpeg" alt="recyclable" class="z-depth-5">
+        <p id="faqInfo" class="z-depth-5">
             #1 - PET (Polyethylene Terephthalate)
             <br />
             -Recyclable, but should not be reused
