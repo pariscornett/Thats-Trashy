@@ -12,7 +12,7 @@ Technologies Used:
 Vanilla JavaScript, jQuery, Materialize, Open Layers, OpenWeatherMap API, and Foursquare API.
 
 Live link:
-https://micaelabray.github.io/ProjectOne/
+https://pariscornett.github.io/Thats-Trashy/
 
 Contact information:
 -Micaela Bray (micaela.bray@gmail.com)
